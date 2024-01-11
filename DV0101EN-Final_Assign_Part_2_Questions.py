@@ -22,6 +22,7 @@ app.title = "Automobile Statistics Dashboard"
 # Create the layout of the app
 year_list = [i for i in range(1980, 2024, 1)]
 
+options='dropdown_options' 
 app.layout = html.Div([
     # Title
     html.H1(
@@ -33,15 +34,14 @@ app.layout = html.Div([
         }
     ),
     # Dropdown for selecting report type
-    dcc.Dropdown(
-        id='dropdown-statistics',
-        dropdown_options = [
-            {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
-            {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
-        ]
-        placeholder='Select a report type',
-        value='Select Statistics',
-        style={'width': '80%', 'padding': '3px', 'font size': '20px', 'text-align-last':'center'}
+    dcc.Dropdown(id='dropdown-statistics',
+                dropdown_options = [
+                                   {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
+                                   {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
+                                   ]
+               placeholder='Select a report type',
+               value='Select Statistics',
+               style={'width': '80%', 'padding': '3px', 'font size': '20px', 'text-align-last':'center'}
     ),
     dcc.Dropdown(
         id='select-year',
