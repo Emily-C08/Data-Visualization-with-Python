@@ -110,7 +110,7 @@ def update_output_container(selected_statistics, input_year):
         # Plot 3: Pie chart for total expenditure share by vehicle type during recessions
         exp_rec = recession_data.groupby('Vehicle_Type')['Advertising_Expenditure'].sum().reset_index()
         R_chart3 = dcc.Graph(
-            figure=px.pie(
+            figure=px.pie(exp_data,
                 values='Advertising_Expenditure',
                 names='Vehicle_Type',
                 title="Total Expenditure Share by Vehicle Type During Recessions"
